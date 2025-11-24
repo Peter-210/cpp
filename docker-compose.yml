@@ -1,0 +1,13 @@
+services:
+  cpp-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sandbox-cpp
+    volumes:
+      - .:/app
+    entrypoint: /bin/bash
+    stdin_open: true
+    tty: true
+    security_opt:
+      - seccomp=unconfined
