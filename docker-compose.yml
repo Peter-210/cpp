@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: sandbox-cpp
+    container_name: cpp-container
     volumes:
       - .:/app
     entrypoint: /bin/bash

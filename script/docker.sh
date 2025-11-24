@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker-compose up -d
-docker exec -it sandbox-cpp /bin/bash
+docker exec -it cpp-container /bin/bash

@@ -1,4 +1,4 @@
-# C++ Sandbox
+# C++ Template
 
 ## Build and Run
 1. Run the Docker Container
