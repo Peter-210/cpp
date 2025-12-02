@@ -23,17 +23,17 @@ make_container() {
 }
 
 case "$1" in
-	""|-d|-dev)
+	""|-d|--dev)
 		echo "Starting docker in profile dev"
 		make_container "dev"
 		;;
 
-	-p|-prod)
+	-p|--prod)
 		echo "Starting docker in profile prod"
 		make_container "prod"
 		;;
 
-	-c|-clean)
+	-c|--clean)
 		echo "Cleaning container and image"
 		docker stop $(docker ps -aq)
 		docker rm $(docker ps -aq)
