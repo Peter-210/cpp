@@ -2,10 +2,10 @@
 
 ## Build and Run
 1. Run the Docker Container
-- Make sure to launch `Docker Desktop` on Windows beforehand
+- If on Windows, make sure to launch `Docker Desktop` first
 
 ```
-./script/docker.sh
+./script/docker.sh -p
 ```
 
 2. Run the cmake workflow to build
