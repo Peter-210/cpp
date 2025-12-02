@@ -13,11 +13,11 @@ services:
     profiles: [dev]
     extends: cpp
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: docker/Dockerfile.dev
     security_opt:
       - seccomp=unconfined
   cpp-prod:
     profiles: [prod]
     extends: cpp
     build:
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile.prod

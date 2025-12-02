@@ -11,45 +11,64 @@ Options:
 	-h, --help    			  Show this help message and exit
 	-d, --debug						Build project to run in debug mode
 	-c, --clean						Remove build files
-	-cl, --clean-lib			Remove lib files (eg. googletest)
+	-l, --lib-clean				Remove lib files (eg. googletest)
 
 EOF
 }
 
 
-case "$1" in
-	""|-d|--debug)
-		echo "Running cmake --workflow --preset debug"
-		cmake --workflow --preset debug
-		;;
+if [[ $# -eq 0 ]]; then
+    print_help
+    exit 1
+fi
 
-	-c|--clean)
-		if [ -d "./build/" ]; then
-			echo "Removing ./build/ folder"
-			rm -rf ./build/
-		fi
-		if [ -L "./compile_commands.json" ]; then
-			echo "Removing ./compile_commands.json file"
-			rm ./compile_commands.json
-		fi
-		;;
+while test $# -gt 0; do
+	case "$1" in
+		-d|--debug)
+			shift
 
-	-cl|--clean-lib)
-		if [ -d "./lib/" ]; then
-			echo "Removing ./lib/ folder"
-			rm -rf ./lib/
-		fi
-		;;
+			if test $# -gt 0; then
+				echo "--debug cannot have more than one flag after it"
+				exit 1
+      fi
 
-	-h|--help)
-		print_help
-		;;
+			echo "Running cmake --workflow --preset debug"
+			cmake --workflow --preset debug
+			;;
 
-	*)
-		echo "Unknown option: $1" >&2
-		echo "Use --help for usage."
-		exit 1
-		;;
-esac
+		-c|--clean)
+			shift
 
-exit 0
+			if [ -d "./build/" ]; then
+				echo "Removing ./build/ folder"
+				rm -rf ./build/
+			fi
+
+			if [ -L "./compile_commands.json" ]; then
+				echo "Removing ./compile_commands.json file"
+				rm ./compile_commands.json
+			fi
+			;;
+
+		-l|--lib-clean)
+			shift
+
+			if [ -d "./lib/" ]; then
+				echo "Removing ./lib/ folder"
+				rm -rf ./lib/
+			fi
+			;;
+
+		-h|--help)
+			shift
+			print_help
+			exit 1
+			;;
+
+		*)
+			echo "Unknown option: $1" >&2
+			echo "Use --help for usage."
+			exit 1
+			;;
+	esac
+done

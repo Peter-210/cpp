@@ -11,7 +11,7 @@
 2. Run the cmake workflow to build
 
 ```
-./script/make.sh
+./script/make.sh -d
 ```
 
 3. Run the executable
@@ -41,8 +41,8 @@ option(ENABLE_TESTS "Enable GoogleTest For Testing" ON)
 ./build/test/main-test.exe
 ```
 
-## make.sh Help Command
-- Use the following command to see all build related commands
+## Help Commands
+- The `-h` or `--help` flag can be used on bash files within `scripts` directory
 
 ```
 ./script/make.bat -h
