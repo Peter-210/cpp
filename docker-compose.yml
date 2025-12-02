@@ -1,27 +1,23 @@
 services:
-  cpp-prod:
+  cpp:
+    profiles: [parent]
+    container_name: cpp-container
     build:
       context: .
-      dockerfile: Dockerfile
-    profiles: [prod]
-    container_name: cpp-container
     volumes:
       - .:/app
     entrypoint: /bin/bash
     stdin_open: true
     tty: true
-    security_opt:
-      - seccomp=unconfined
   cpp-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
     profiles: [dev]
-    container_name: cpp-container
-    volumes:
-      - .:/app
-    entrypoint: /bin/bash
-    stdin_open: true
-    tty: true
+    extends: cpp
+    build:
+      dockerfile: Dockerfile.dev
     security_opt:
       - seccomp=unconfined
+  cpp-prod:
+    profiles: [prod]
+    extends: cpp
+    build:
+      dockerfile: Dockerfile
