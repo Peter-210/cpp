@@ -3,12 +3,12 @@
 ## TODO
 - Create an optimized prod method for docker and make scripts (eg O2 optimizations)
     - prod optimizations should be default and changed via option varaible or presets
-- Create a script to manually edit docker-compose and docker script for changing name of container
 - Better error checking compiler with g++ flags
 
 ## Initial Steps
-- Give permission to execute helper script files: `chmod u+x scripts/*`
-- Change the container name within `docker-compose.yml` and `script/docker.sh` to something unique
+- Give permission to execute helper script files: `chmod u+x script/*`
+- Run `script/container-name.sh` and provide a unique docker container name
+    - `container-name.sh` will self delete after use
 
 ## Build and Run in Debug Mode
 1. Run the Docker Container
