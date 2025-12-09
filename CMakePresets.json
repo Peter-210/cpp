@@ -9,23 +9,20 @@
 		{
 			"name": "config-default",
 			"generator": "Unix Makefiles",
-			"binaryDir": "${sourceDir}/build",
-			"cacheVariables": {
-				"CMAKE_C_COMPILER": "gcc",
-				"CMAKE_CXX_COMPILER": "g++"
-			}
+			"binaryDir": "${sourceDir}/build"
 		},
 		{
 			"name": "config-debug",
 			"inherits": "config-default",
 			"cacheVariables": {
-				"CMAKE_BUILD_TYPE": "Debug"
+				"ENABLE_DEBUG": "ON"
 			}
 		},
 		{
 			"name": "config-testing",
 			"inherits": "config-debug",
 			"cacheVariables": {
+				"ENABLE_DEBUG": "ON",
 				"ENABLE_TESTS": "ON"
 			}
 		}
