@@ -5,7 +5,7 @@ OLD_NAME="cpp-container"
 read -p "Enter new container name: " NEW_NAME
 echo
 
-echo "This will change project files to use '$NEW_NAME' container name"
+echo "This will change project files to use '$NEW_NAME' as the new container name"
 read -p "Are you sure? (Press 'y' to proceed) " -n 1 -r USER_REPLY
 echo
 
