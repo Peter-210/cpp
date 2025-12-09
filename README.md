@@ -1,5 +1,9 @@
 # C++ Template
 
+## TODO
+- Use the container name change to create a prod and debug seperate containers
+- Clean containers separately (isolate clean between prod and debug)
+
 ## Initial Steps
 - Give permission to execute helper script files: `chmod u+x script/*`
 - Run `script/container-name.sh` and provide a unique docker container name
