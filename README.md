@@ -4,6 +4,11 @@
 - Create an optimized prod method for docker and make scripts (eg O2 optimizations)
     - prod optimizations should be default and changed via option varaible or presets
 - Better error checking compiler with g++ flags
+    - Errors: `-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion`
+    - Debug Build: `-ggdb`
+    - Prod Build: `-O2 -DNDEBUG`
+    - Compiler Extensions: `-pedantic-errors`
+    - Compiler Versions: `-std=c++23`
 
 ## Initial Steps
 - Give permission to execute helper script files: `chmod u+x script/*`
