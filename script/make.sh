@@ -9,10 +9,11 @@ Run and Manage CMake Build
 
 Options:
 	-h, --help    			  Show this help message and exit
-	-d, --debug						Build project to run in debug mode
-	-t, --test						Build project to run in test mode. May need to clean (-c) before use
+	-p, --prod						Build project to run in prod mode (Optimized version)
+	-d, --debug						Build project to run in debug mode (GDB)
+	-t, --test						Build project to run in test mode (GTest and GDB). May need to clean (-c) before use
 	-c, --clean						Remove build files
-	-l, --lib-clean				Remove lib files (eg. googletest)
+	-l, --lib-clean				Remove lib files (eg. GTest)
 
 EOF
 }
@@ -25,6 +26,18 @@ fi
 
 while test $# -gt 0; do
 	case "$1" in
+		-p|--prod)
+			shift
+
+			if test $# -gt 0; then
+				echo "--prod cannot have more than one flag after it"
+				exit 1
+      fi
+
+			echo "Running cmake --workflow --preset main"
+			cmake --workflow --preset main
+			;;
+
 		-d|--debug)
 			shift
 

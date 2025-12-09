@@ -15,41 +15,6 @@
 - Run `script/container-name.sh` and provide a unique docker container name
     - `container-name.sh` will self delete after use
 
-## Build and Run in Debug Mode
-1. Run the Docker Container
-- If on Windows, make sure to launch `Docker Desktop` first and use `WSL`
-
-```
-./script/docker.sh -d
-```
-
-2. Run the cmake workflow in debug mode to build
-
-```
-./script/make.sh -d
-```
-
-3. Run the executable
-
-```
-./build/src/main.exe
-```
-
-## Running with GTest
-- Steps are similar to the `Build and Run in Debug Mode` instructions
-
-- Run the cmake workflow in test mode
-
-```
-./script/make.sh -t
-```
-
-- Run test executable
-
-```
-./build/test/main-test.exe
-```
-
 ## Help Commands
 - The `-h` or `--help` flag can be used on bash files within `scripts` directory
 
@@ -58,4 +23,73 @@
 ```
 ```
 ./script/make.bat -h
+```
+
+## Build and Run in Prod Mode
+- Note: Clean the docker container if you want to use any other modes (Debug or Test)
+    - Use flag `--help` for more info in `scripts/docker.sh`
+
+1. Run the Docker Container
+- If on Windows, make sure to launch `Docker Desktop` first and use `WSL`
+
+```
+./script/docker.sh -p
+```
+
+2. Run the cmake workflow in prod mode to build
+
+```
+./script/make.sh -p
+```
+
+3. Run the executable
+
+```
+./build/src/main.exe
+```
+
+## Running with GDB (Debug Mode)
+- Docker will load the following tools:
+    - gdb
+    - clang-tidy
+    - valgrind
+    - perf
+
+1. Run the Docker Container
+
+```
+./script/docker.sh -d
+```
+
+2. Run the cmake workflow in debug mode
+
+```
+./script/make.sh -d
+```
+
+3. Run executable in GDB
+
+```
+gdb ./build/src/main.exe
+```
+
+## Running with GTest (Test Mode)
+- Note: This method also runs with debug tools
+
+1. Run the Docker Container
+
+```
+./script/docker.sh -d
+```
+
+2. Run the cmake workflow in test mode
+
+```
+./script/make.sh -t
+```
+
+3. Run test executable
+
+```
+./build/test/main-test.exe
 ```
