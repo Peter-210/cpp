@@ -9,7 +9,11 @@
 		{
 			"name": "config-default",
 			"generator": "Unix Makefiles",
-			"binaryDir": "${sourceDir}/build"
+			"binaryDir": "${sourceDir}/build",
+			"cacheVariables": {
+				"CMAKE_C_COMPILER": "gcc",
+				"CMAKE_CXX_COMPILER": "g++"
+			}
 		},
 		{
 			"name": "config-debug",
