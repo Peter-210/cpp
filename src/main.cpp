@@ -1,6 +1,7 @@
 #include <iostream>
+#include "header.h"
 
 int main() {
-    std::cout << "Hello World!\n";
-    return 0;
+	std::cout << hello() << '\n';
+	return 0;
 }
