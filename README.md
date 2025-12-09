@@ -1,15 +1,5 @@
 # C++ Template
 
-## TODO
-- Create an optimized prod method for docker and make scripts (eg O2 optimizations)
-    - prod optimizations should be default and changed via option varaible or presets
-- Better error checking compiler with g++ flags
-    - Errors: `-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion`
-    - Debug Build: `-ggdb`
-    - Prod Build: `-O2 -DNDEBUG`
-    - Compiler Extensions: `-pedantic-errors`
-    - Compiler Versions: `-std=c++23`
-
 ## Initial Steps
 - Give permission to execute helper script files: `chmod u+x script/*`
 - Run `script/container-name.sh` and provide a unique docker container name
@@ -26,9 +16,6 @@
 ```
 
 ## Build and Run in Prod Mode
-- Note: Clean the docker container if you want to use any other modes (Debug or Test)
-    - Use flag `--help` for more info in `scripts/docker.sh`
-
 1. Run the Docker Container
 - If on Windows, make sure to launch `Docker Desktop` first and use `WSL`
 
