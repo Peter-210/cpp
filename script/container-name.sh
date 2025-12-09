@@ -24,4 +24,5 @@ sed -i "s/container_name: $OLD_NAME/container_name: $NEW_NAME/g" "../docker-comp
 
 echo "Docker container name has changed to '$NEW_NAME'"
 
-rm -- $CURR_FILE_PATH
+# Deletes this script file
+rm -- "$0"
