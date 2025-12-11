@@ -84,6 +84,13 @@ gdb ./build/src/main.exe
 ./script/docker.sh -c
 ```
 
+- For any conflicts with docker container, run the following to clean container and image then re-run the script with the proper flag mode (-p/d):
+    - The order is important. Clean container first, then image
+```
+./script/docker.sh -c
+./script/docker.sh -i
+```
+
 - For CMake builds that are not updating to code changes, run the following to clean build then re-run the script with the proper flag mode (-p/d/t):
 ```
 ./script/make.sh -c
@@ -97,11 +104,10 @@ gdb ./build/src/main.exe
 ## TODO
 
 ### Working On
-- Delete only the appropriate docker container
-    - Clean containers separately (isolate clean between prod and debug)
 - Create a setup script for stuff like container naming and README project name
     - Automate filling in project name and details for README
 
 ### Ignored
+- Add volume (personal storage) to docker containers
 - Use the container name change to create a prod and debug seperate containers
 - Create an auto build for prod docker

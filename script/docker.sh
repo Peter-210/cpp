@@ -2,6 +2,9 @@
 
 CONTAINER_NAME=cpp-container
 
+IMAGE_PROD_NAME=cpp-cpp-prod
+IMAGE_DEV_NAME=cpp-cpp-dev
+
 print_help() {
 	cat <<EOF
 Usage: $0 [OPTIONS]
@@ -12,7 +15,8 @@ Options:
 	-h, --help    			  Show this help message and exit
 	-d, --dev							Create container and image for developement (uses extra dev tools)
 	-p, --prod						Create container and image for production (minimal dependencies)
-	-c, --clean						Purge docker container and image
+	-c, --clean						Purge docker container
+	-i, --image-clean			Purge docker image (prod and dev)
 
 EOF
 }
@@ -42,7 +46,7 @@ while test $# -gt 0; do
 				exit 1
       fi
 
-			echo "Starting docker in profile dev"
+			echo "Starting docker in profile dev..."
 			make_container "dev"
 			;;
 
@@ -54,18 +58,26 @@ while test $# -gt 0; do
 				exit 1
       fi
 
-			echo "Starting docker in profile prod"
+			echo "Starting docker in profile prod..."
 			make_container "prod"
 			;;
 
 		-c|--clean)
 			shift
 
-			echo "Cleaning container and image"
+			echo "Cleaning container..."
 
-			docker stop $(docker ps -aq)
-			docker rm $(docker ps -aq)
-			docker rmi -f $(docker images -q)
+			docker stop $CONTAINER_NAME
+			docker rm $CONTAINER_NAME
+			;;
+			
+		-i|--image-clean)
+			shift
+
+			echo "Cleaning images..."
+
+			docker rmi $IMAGE_PROD_NAME
+			docker rmi $IMAGE_DEV_NAME
 			;;
 
 		-h|--help)

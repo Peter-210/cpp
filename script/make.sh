@@ -70,7 +70,7 @@ while test $# -gt 0; do
 		-c|--clean)
 			shift
 
-			echo "Start cleaning..."
+			echo "Cleaning build..."
 
 			if [ -d "./build/" ]; then
 				echo "Removing ./build/ folder"
@@ -86,7 +86,7 @@ while test $# -gt 0; do
 		-l|--lib-clean)
 			shift
 
-			echo "Start cleaning libraries..."
+			echo "Cleaning libraries..."
 
 			if [ -d "./lib/" ]; then
 				echo "Removing ./lib/ folder"
