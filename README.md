@@ -105,7 +105,9 @@ gdb ./build/src/main.exe
 
 ### Working On
 - Create a setup script for stuff like container naming and README project name
+- One for project setup (README details) and the other for general setup (docker container and image names)
     - Automate filling in project name and details for README
+    - Create custom container and image names
 
 ### Ignored
 - Add volume (personal storage) to docker containers
