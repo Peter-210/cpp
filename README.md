@@ -1,11 +1,16 @@
 # C++ Template
 
 ## TODO
-- Use the container name change to create a prod and debug seperate containers
-- Clean containers separately (isolate clean between prod and debug)
-- Automate filling in project name and details for README
-- Create an auto build for prod docker
 - Test if subdirectories cpp and h files will work with CMake
+- Delete only the appropriate docker container
+    - Clean containers separately (isolate clean between prod and debug)
+- Bash script can run anywhere for docker and cmake
+- Create a setup script for stuff like container naming and README project name
+    - Automate filling in project name and details for README
+
+## Ignored TODO
+- Use the container name change to create a prod and debug seperate containers
+- Create an auto build for prod docker
 
 ## Initial Steps
 - Give permission to execute helper script files: `chmod u+x script/*`
