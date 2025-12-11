@@ -25,8 +25,9 @@
 
 ## Build and Run
 - Refer to the [Usage](#usage) section of this guide for details on `modes`
-- All modes follow a similar step with slight differences. The general order is as follows:
+- All modes follow a similar step with slight differences
 
+### Build and Run (Prod Mode)
 1. Run the Docker Container
 ```
 ./script/docker.sh -p
@@ -42,35 +43,34 @@
 ./build/src/main.exe
 ```
 
-### Build and Run (Prod Mode)
-```
-./script/docker.sh -p
-```
-```
-./script/make.sh -p
-```
-```
-./build/src/main.exe
-```
-
 ### Build and Run (Dev/Debug Mode)
+1. Run the Docker Container
 ```
 ./script/docker.sh -d
 ```
+
+2. Run the cmake workflow to build
 ```
 ./script/make.sh -d
 ```
+
+3. Run the executable
 ```
 gdb ./build/src/main.exe
 ```
 
 ### Build and Run (Test Mode)
+1. Run the Docker Container
 ```
 ./script/docker.sh -d
 ```
+
+2. Run the cmake workflow to build
 ```
 ./script/make.sh -t
 ```
+
+3. Run the executable
 ```
 ./build/test/main-test.exe
 ```
