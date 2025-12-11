@@ -1,7 +1,7 @@
 # C++ Template
 
 ## TODO
-- Test if subdirectories cpp and h files will work with CMake
+- Update readme to be clear by show general use (no need to specify each flag)
 - Delete only the appropriate docker container
     - Clean containers separately (isolate clean between prod and debug)
 - Create a setup script for stuff like container naming and README project name
