@@ -7,7 +7,10 @@
 ## Setup
 - Make sure to have `Docker` installed
     - If on Windows, use `WSL` with `Docker Desktop` (Make sure to use `Linux Containers`)
-- Give permission to execute helper script files: `chmod u+x script/*`
+- Give permission to execute helper script files: 
+```
+chmod u+x script/*
+```
 
 ## Usage
 - This project contains scripts that can run in different modes: 
