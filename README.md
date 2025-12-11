@@ -1,7 +1,70 @@
 # C++ Template
 
+## (For Developement Only) Project Setup
+- Run `script/container-name.sh` and provide a unique docker container name
+    - `container-name.sh` will self delete after use
+
+## Setup
+- Make sure to have `Docker` installed
+    - If on Windows, use `WSL` with `Docker Desktop` (Make sure to use `Linux Containers`)
+- Give permission to execute helper script files: `chmod u+x script/*`
+
+## Usage
+- This project contains scripts that can run in different modes: 
+    - p (prod) - Minimal installed tools on docker and optimized code from the compiler
+    - d (dev/debug) - All tools installed for debugging the project (eg. GDB)
+    - t (test) - Used for unit testing with GTest
+
+- To learn more about these modes, use the `-h` or `--help` flag for the following scripts:
+```
+scripts/docker.sh -h
+```
+```
+scripts/make.sh -h
+```
+
+## Build and Run
+- Refer to the [Usage](#usage) section of this guide for details on `modes`
+- All modes follow a similar step with slight differences. The general order is as follows:
+    - Variations are marked with `( )`
+
+1. Run the Docker Container
+```
+./script/docker.sh -(flag)
+```
+
+2. Run the cmake workflow to build
+```
+./script/make.sh -(flag)
+```
+
+3. Run the executable
+```
+./build/(src or test)/main.exe
+```
+
+### Build and Run (Prod Mode)
+```
+./script/docker.sh -p
+./script/make.sh -p
+./build/src/main.exe
+```
+
+### Build and Run (Dev/Debug Mode)
+```
+./script/docker.sh -d
+./script/make.sh -d
+gdb ./build/src/main.exe
+```
+
+### Build and Run (Test Mode)
+```
+./script/docker.sh -d
+./script/make.sh -t
+./build/test/main-test.exe
+```
+
 ## TODO
-- Update readme to be clear by show general use (no need to specify each flag)
 - Delete only the appropriate docker container
     - Clean containers separately (isolate clean between prod and debug)
 - Create a setup script for stuff like container naming and README project name
@@ -10,84 +73,3 @@
 ## Ignored TODO
 - Use the container name change to create a prod and debug seperate containers
 - Create an auto build for prod docker
-
-## Initial Steps
-- Give permission to execute helper script files: `chmod u+x script/*`
-- Run `script/container-name.sh` and provide a unique docker container name
-    - `container-name.sh` will self delete after use
-
-## Help Commands
-- The `-h` or `--help` flag can be used on bash files within `scripts` directory
-
-```
-./script/docker.bat -h
-```
-```
-./script/make.bat -h
-```
-
-## Build and Run in Prod Mode
-1. Run the Docker Container
-- If on Windows, make sure to launch `Docker Desktop` first and use `WSL`
-
-```
-./script/docker.sh -p
-```
-
-2. Run the cmake workflow in prod mode to build
-
-```
-./script/make.sh -p
-```
-
-3. Run the executable
-
-```
-./build/src/main.exe
-```
-
-## Running with GDB (Debug Mode)
-- Docker will load the following tools:
-    - gdb
-    - clang-tidy
-    - valgrind
-    - perf
-
-1. Run the Docker Container
-
-```
-./script/docker.sh -d
-```
-
-2. Run the cmake workflow in debug mode
-
-```
-./script/make.sh -d
-```
-
-3. Run executable in GDB
-
-```
-gdb ./build/src/main.exe
-```
-
-## Running with GTest (Test Mode)
-- Note: This method also runs with debug tools
-
-1. Run the Docker Container
-
-```
-./script/docker.sh -d
-```
-
-2. Run the cmake workflow in test mode
-
-```
-./script/make.sh -t
-```
-
-3. Run test executable
-
-```
-./build/test/main-test.exe
-```
