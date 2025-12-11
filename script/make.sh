@@ -24,6 +24,11 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
+CURR_FILE_PATH="$0"
+CURR_DIR_PATH="${CURR_FILE_PATH%/*}"
+cd $CURR_DIR_PATH
+cd ../
+
 while test $# -gt 0; do
 	case "$1" in
 		-p|--prod)
