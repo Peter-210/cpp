@@ -23,7 +23,7 @@ source public.env
 sed -i "s/\(CONTAINER_NAME=\).*/\1$CONTAINER_NAME/g" "script/docker.sh"
 sed -i "s/\(container_name: \).*/\1$CONTAINER_NAME/g" "docker-compose.yml"
 
-sed -i '/^cpp-prod:/,/^[^ ]/{s/image: .*/image: '"$IMAGE_PROD_NAME"'/}' "docker-compose.yml"
-sed -i '/^cpp-dev:/,/^[^ ]/{s/image: .*/image: '"$IMAGE_DEV_NAME"'/}' "docker-compose.yml"
+sed -i "/cpp-prod:/,/image:/s|image:.*|image: $IMAGE_PROD_NAME|" "docker-compose.yml"
+sed -i "/cpp-dev:/,/image:/s|image:.*|image: $IMAGE_DEV_NAME|" "docker-compose.yml"
 
 echo "Setup complete"
