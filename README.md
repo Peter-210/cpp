@@ -5,12 +5,13 @@
     - `container-name.sh` will self delete after use
 
 ## Setup
-- Make sure to have `Docker` installed
+1. Make sure to have `Docker` installed
     - If on Windows, use `WSL` with `Docker Desktop` (Make sure to use `Linux Containers`)
-- Give permission to execute helper script files: 
+2. Give permission to execute helper script files: 
 ```
 chmod u+x script/*
 ```
+3. Fill in `public.env` first, then run `script/setup.sh`
 
 ## Usage
 - This project contains scripts that can run in different modes: 
