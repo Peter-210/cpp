@@ -3,6 +3,9 @@
 ## TODO
 - Use the container name change to create a prod and debug seperate containers
 - Clean containers separately (isolate clean between prod and debug)
+- Automate filling in project name and details for README
+- Create an auto build for prod docker
+- Test if subdirectories cpp and h files will work with CMake
 
 ## Initial Steps
 - Give permission to execute helper script files: `chmod u+x script/*`
