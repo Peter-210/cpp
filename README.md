@@ -11,7 +11,7 @@
 ```
 chmod u+x script/*
 ```
-3. Fill in `public.env` first, then run `script/setup.sh`
+3. Fill in details for `public.env` first, then run `script/setup.sh`
 
 ## Usage
 - This project contains scripts that can run in different modes: 

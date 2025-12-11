@@ -14,7 +14,7 @@ fi
 CURR_FILE_PATH="$0"
 CURR_DIR_PATH="${CURR_FILE_PATH%/*}"
 cd $CURR_DIR_PATH
-cd ..
+cd ../
 
 # Load setup variables
 source public.env
@@ -23,7 +23,10 @@ source public.env
 sed -i "s/\(CONTAINER_NAME=\).*/\1$CONTAINER_NAME/g" "script/docker.sh"
 sed -i "s/\(container_name: \).*/\1$CONTAINER_NAME/g" "docker-compose.yml"
 
+sed -i "s/\(IMAGE_PROD_NAME=\).*/\1$IMAGE_PROD_NAME/g" "script/docker.sh"
 sed -i "/cpp-prod:/,/image:/s|image:.*|image: $IMAGE_PROD_NAME|" "docker-compose.yml"
+
+sed -i "s/\(IMAGE_DEV_NAME=\).*/\1$IMAGE_DEV_NAME/g" "script/docker.sh"
 sed -i "/cpp-dev:/,/image:/s|image:.*|image: $IMAGE_DEV_NAME|" "docker-compose.yml"
 
 echo "Setup complete"
