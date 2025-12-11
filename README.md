@@ -4,7 +4,6 @@
 - Test if subdirectories cpp and h files will work with CMake
 - Delete only the appropriate docker container
     - Clean containers separately (isolate clean between prod and debug)
-- Bash script can run anywhere for docker and cmake
 - Create a setup script for stuff like container naming and README project name
     - Automate filling in project name and details for README
 
