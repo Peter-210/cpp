@@ -1,4 +1,4 @@
-set(BINARY ${CMAKE_PROJECT_NAME}.exe)
+set(BINARY ${CMAKE_PROJECT_NAME})
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
 
 add_executable(${BINARY} ${SOURCES})

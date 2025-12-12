@@ -41,7 +41,7 @@ chmod u+x script/*
 
 3. Run the executable
 ```
-./build/src/main.exe
+./build/src/main
 ```
 
 ### Build and Run (Dev/Debug Mode)
@@ -57,7 +57,7 @@ chmod u+x script/*
 
 3. Run the executable
 ```
-gdb ./build/src/main.exe
+gdb ./build/src/main
 ```
 
 ### Build and Run (Test Mode)
@@ -73,7 +73,7 @@ gdb ./build/src/main.exe
 
 3. Run the executable
 ```
-./build/test/main-test.exe
+./build/test/main-test
 ```
 
 ## Troubleshooting
@@ -102,6 +102,7 @@ gdb ./build/src/main.exe
 ## TODO
 
 ### Working On
+- GCC Flag `-Weffc++` throws errors for GTest
 - Create a setup script for stuff like container naming and README project name
 - One for project setup (README details) and the other for general setup (docker container and image names)
     - Automate filling in project name and details for README
