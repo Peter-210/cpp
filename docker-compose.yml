@@ -11,12 +11,12 @@ services:
     tty: true
   prod:
     profiles: [prod]
-    extends: cpp
+    extends: cpp-image
     build:
       dockerfile: docker/Dockerfile.prod
   dev:
     profiles: [dev]
-    extends: cpp
+    extends: cpp-image
     build:
       dockerfile: docker/Dockerfile.dev
     security_opt:
