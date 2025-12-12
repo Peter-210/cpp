@@ -9,17 +9,15 @@ services:
     entrypoint: /bin/bash
     stdin_open: true
     tty: true
-  cpp-prod:
+  prod:
     profiles: [prod]
     extends: cpp
     build:
       dockerfile: docker/Dockerfile.prod
-    image: cpp-image-prod
-  cpp-dev:
+  dev:
     profiles: [dev]
     extends: cpp
     build:
       dockerfile: docker/Dockerfile.dev
-    image: cpp-image-dev
     security_opt:
       - seccomp=unconfined

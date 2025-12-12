@@ -20,13 +20,17 @@ cd ../
 source public.env
 
 # Change file variables to match setup variables
-sed -i "s/\(CONTAINER_NAME=\).*/\1$CONTAINER_NAME/g" "script/docker.sh"
 sed -i "s/\(container_name: \).*/\1$CONTAINER_NAME/g" "docker-compose.yml"
+sed -i "s/\(CONTAINER_NAME=\).*/\1$CONTAINER_NAME/g" "script/docker.sh"
 
-sed -i "s/\(IMAGE_PROD_NAME=\).*/\1$IMAGE_PROD_NAME/g" "script/docker.sh"
-sed -i "/cpp-prod:/,/image:/s|image:.*|image: $IMAGE_PROD_NAME|" "docker-compose.yml"
+sed -i "2s/.*/${IMAGE_NAME}:/" "docker-compose.yml"
+sed -i "s/\(IMAGE_PROD_NAME=\).*/\1${IMAGE_NAME}-prod/g" "script/docker.sh"
+sed -i "s/\(IMAGE_DEV_NAME=\).*/\1${IMAGE_NAME}-dev/g" "script/docker.sh"
 
-sed -i "s/\(IMAGE_DEV_NAME=\).*/\1$IMAGE_DEV_NAME/g" "script/docker.sh"
-sed -i "/cpp-dev:/,/image:/s|image:.*|image: $IMAGE_DEV_NAME|" "docker-compose.yml"
+# sed -i "s/\(IMAGE_PROD_NAME=\).*/\1$IMAGE_PROD_NAME/g" "script/docker.sh"
+# sed -i "/cpp-prod:/,/image:/s|image:.*|image: $IMAGE_PROD_NAME|" "docker-compose.yml"
+
+# sed -i "s/\(IMAGE_DEV_NAME=\).*/\1$IMAGE_DEV_NAME/g" "script/docker.sh"
+# sed -i "/cpp-dev:/,/image:/s|image:.*|image: $IMAGE_DEV_NAME|" "docker-compose.yml"
 
 echo "Setup complete"
