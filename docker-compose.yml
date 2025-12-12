@@ -1,5 +1,5 @@
 services:
-  cpp:
+  cpp-image:
     profiles: [parent]
     container_name: cpp-container
     build:
