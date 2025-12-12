@@ -1,8 +1,8 @@
 #!/bin/bash
 
-CONTAINER_NAME=cpp-container
-IMAGE_PROD_NAME=cpp-image-prod
-IMAGE_DEV_NAME=cpp-image-dev
+CONTAINER_NAME=cpp
+IMAGE_PROD_NAME=cpp-prod
+IMAGE_DEV_NAME=cpp-dev
 
 print_help() {
 	cat <<EOF

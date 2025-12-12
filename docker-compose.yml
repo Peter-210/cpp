@@ -1,7 +1,7 @@
 services:
-  cpp-image:
+  cpp:
     profiles: [parent]
-    container_name: cpp-container
+    container_name: cpp
     build:
       context: .
     volumes:
@@ -11,12 +11,12 @@ services:
     tty: true
   prod:
     profiles: [prod]
-    extends: cpp-image
+    extends: cpp
     build:
       dockerfile: docker/Dockerfile.prod
   dev:
     profiles: [dev]
-    extends: cpp-image
+    extends: cpp
     build:
       dockerfile: docker/Dockerfile.dev
     security_opt:

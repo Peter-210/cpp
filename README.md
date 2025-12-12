@@ -1,9 +1,5 @@
 # C++ Template
 
-## Project Setup (For Developement Only)
-- Run `script/container-name.sh` and provide a unique docker container name
-    - `container-name.sh` will self delete after use
-
 ## Setup
 1. Make sure to have `Docker` installed
     - If on Windows, use `WSL` with `Docker Desktop` (Make sure to use `Linux Containers`)
@@ -11,7 +7,8 @@
 ```
 chmod u+x script/*
 ```
-3. Fill in details for `public.env` first, then run `script/setup.sh`
+3. Make sure your project directory is formatted as such: `my-project-dir`
+    - Then run `script/setup.sh`. This will set project directory to be the name used in docker
 
 ## Usage
 - This project contains scripts that can run in different modes: 
