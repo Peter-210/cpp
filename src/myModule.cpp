@@ -1,6 +1,7 @@
 #include <string>
 #include "header.h"
 
-std::string hello() {
+std::string hello()
+{
 	return "Hello World";
 }
