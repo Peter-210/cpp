@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['template_0',['C++ Template',['../md_README.html',1,'']]]
+  ['template_0',['C++ Template',['../index.html',1,'']]]
 ];
