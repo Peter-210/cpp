@@ -8,7 +8,7 @@ print_help() {
 	cat <<EOF
 Usage: $0 [OPTIONS]
 
-Run and Manage Docker
+Run and Manage Docker for Doxygen - Generate Documentation
 
 Options:
 	-h, --help    			  Show this help message and exit
