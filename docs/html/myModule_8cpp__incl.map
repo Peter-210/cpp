@@ -1,0 +1,8 @@
+<map id="src/myModule.cpp" name="src/myModule.cpp">
+<area shape="rect" id="Node000001" title="This file handles the hello() function." alt="" coords="5,5,147,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="47,152,105,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,31,67,64,65,104,72,138,67,139,60,104,62,63,70,30"/>
+<area shape="rect" id="Node000003" href="$header_8h_source.html" title=" " alt="" coords="75,79,154,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,30,104,65,100,68,80,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="111,106,91,141,86,139,106,103"/>
+</map>
