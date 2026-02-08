@@ -1,5 +1,5 @@
+#include "myModule.h"
 #include <iostream>
-#include "header.h"
 
 int main()
 {

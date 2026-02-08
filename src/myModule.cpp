@@ -8,8 +8,8 @@
  * @copyright
  */
 
+#include "myModule.h"
 #include <string>
-#include "header.h"
 
 /**
  * @brief Returns the string "Hello World".
