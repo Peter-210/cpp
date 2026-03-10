@@ -1,6 +1,12 @@
 Checks: >
+  misc-include-cleaner,
+  google-*,
+  cppcoreguidelines-*,
+  clang-analyzer-*,
   modernize-*,
   readability-*,
-  performance-*
+  performance-*,
+  -modernize-use-trailing-return-type,
+  -google-readability-namespace-comments
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'

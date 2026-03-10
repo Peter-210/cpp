@@ -1,5 +1,6 @@
+#include "myModule.h" // Header file from "src/"
+
 #include "gtest/gtest.h"
-#include "header.h" // Header file from "src/"
 
 TEST(Name, Subname)
 {
